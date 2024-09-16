@@ -1,44 +1,91 @@
 "use client";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-// import { Menubar, MenubarItem, MenubarButton, MenubarList } from "@/components/ui/Menubar";
+import {
+  Menubar,
+  MenubarContent,
+  MenubarItem,
+  MenubarMenu,
+  MenubarSeparator,
+  MenubarShortcut,
+  MenubarTrigger,
+} from "@/components/ui/menubar";
+
 import { ChevronDownIcon } from "@radix-ui/react-icons";
-import Image from 'next/image';
-import logo from '../../app/assets/enest.png';
+import { MdOutlineSchool } from "react-icons/md";
+import { CiMemoPad } from "react-icons/ci";
+import { TbBrain } from "react-icons/tb";
+import { MdGroup } from "react-icons/md";
+import Image from "next/image";
+import logo from "../../app/assets/enest.png";
 
 export default function Navbar() {
   return (
     <nav className="flex justify-between items-center py-4 px-8 bg-white shadow-md">
       {/* Logo Section */}
       <div className="flex items-center space-x-4">
-      <Image src={logo} alt="Logo" width={40} height={40} />
-        <span className="text-xl font-semibold text-blue-600">E-NEST</span>
+        <Image src={logo} alt="Logo" width={40} height={40} />
+        <span className="text-xl font-sans font-medium text-blue-600">E-NEST</span>
       </div>
 
       {/* Menubar Section */}
-      <ul className="flex space-x-8 text-lg">
-        <li className="cursor-pointer hover:text-blue-600">Home</li>
-        <li className="cursor-pointer hover:text-blue-600">About</li>
-        <li className="cursor-pointer hover:text-blue-600">Services</li>
-        <li className="cursor-pointer hover:text-blue-600">Blog</li>
-        <li className="cursor-pointer hover:text-blue-600">Contact</li>
+      <ul className="flex space-x-12 text-md font-medium text-gray-500">
+        <li className="cursor-pointer hover:text-blue-600">
+          <div className="flex justify-center items-center gap-2">
+            <MdOutlineSchool className="text-gray-800 text-lg" />
+            Home
+          </div>
+        </li>
+        <li className="cursor-pointer hover:text-blue-600">
+          <div className="flex justify-center items-center gap-2">
+            <CiMemoPad className="text-gray-800 text-lg" />
+            Test Series
+          </div>
+        </li>
+        <li className="cursor-pointer hover:text-blue-600">
+          <div className="flex justify-center items-center gap-2">
+            <TbBrain className="text-gray-800 text-lg" />
+            Skill Connect
+          </div>
+        </li>
+        <li className="cursor-pointer hover:text-blue-600">
+          <div className="flex justify-center items-center gap-2">
+            <MdGroup className="text-gray-800 text-lg" />
+            Expert Connect
+          </div>
+        </li>
+        <li className="cursor-pointer hover:text-blue-600">
+          <div className="flex justify-center items-center gap-2">
+            More
+            <ChevronDownIcon className="text-gray-800 text-lg" />
+          </div>
+        </li>
       </ul>
 
       {/* Avatar Section */}
-      <div className="flex items-center space-x-4">
-        {/* <Menubar>
-          <MenubarButton className="flex items-center space-x-2 cursor-pointer">
-            <Avatar className="w-10 h-10">
-              <AvatarImage src="/user-avatar.jpg" alt="User Avatar" />
-              <AvatarFallback>JD</AvatarFallback>
-            </Avatar>
-            <ChevronDownIcon />
-          </MenubarButton>
-          <MenubarList>
-            <MenubarItem>Profile</MenubarItem>
-            <MenubarItem>Settings</MenubarItem>
-            <MenubarItem>Logout</MenubarItem>
-          </MenubarList>
-        </Menubar> */}
+      <div className="flex items-center justify-center">
+        <Menubar className="rounded-full p-1 bg-gray-200">
+          <MenubarMenu>
+            <MenubarTrigger>
+              {/* <div className="rounded-full overflow-hidden">
+                <Image
+                  src={logo}
+                  alt="Logo"
+                  width={40}
+                  height={40}
+                  className="w-10 h-10 object-cover"
+                />
+              </div> */}
+            </MenubarTrigger>
+            <MenubarContent className="rounded-lg p-2 bg-white shadow-md">
+              <MenubarItem>
+                Search <MenubarShortcut>Ctrl+K</MenubarShortcut>
+              </MenubarItem>
+              <MenubarSeparator />
+              <MenubarItem>Profile</MenubarItem>
+              <MenubarItem>Logout</MenubarItem>
+            </MenubarContent>
+          </MenubarMenu>
+        </Menubar>
       </div>
     </nav>
   );

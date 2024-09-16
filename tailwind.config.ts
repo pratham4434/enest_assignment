@@ -10,7 +10,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Roboto", "sans-serif"], 
+        sans: ["SUSE", "sans-serif"], 
+
       },
       colors: {
         background: "hsl(var(--background))",
