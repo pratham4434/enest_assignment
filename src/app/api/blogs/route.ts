@@ -7,8 +7,8 @@ export async function GET() {
   await connectDB();
 
   try {
-    const blogs = await Blog.find(); // Fetch all blogs from MongoDB
-    return NextResponse.json(blogs); // Return all blogs
+    const blogs = await Blog.find(); 
+    return NextResponse.json(blogs); 
   } catch (error) {
     console.error("Error fetching blogs:", error);
     return NextResponse.json({ error: "Failed to fetch blogs" }, { status: 500 });
@@ -22,7 +22,7 @@ export async function POST(request: NextRequest) {
   try {
     const { title1, title2, title3, content } = await request.json();
 
-    // Validate required fields
+    // Validate 
     if (!title1 || !content) {
       return NextResponse.json(
         { error: "Title and content are required" },
@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Create a new blog document
+    // new blog document
     const newBlog = new Blog({
       title1,
       title2,
@@ -38,7 +38,7 @@ export async function POST(request: NextRequest) {
       content,
     });
 
-    // Save the new blog to MongoDB
+    // Save new blog 
     await newBlog.save();
 
     return NextResponse.json(newBlog, { status: 201 });
