@@ -16,7 +16,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {/* Container for centering layout */}
         <Navbar />
         <div className="container mx-auto my-4 px-4 lg:px-8">
           {children}

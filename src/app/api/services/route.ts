@@ -3,11 +3,11 @@ import { connectDB } from '@/app/db/db.config';
 import Service from '@/app/models/service';
 
 export async function GET() {
-  await connectDB();  // Ensure DB connection
+  await connectDB(); 
 
   try {
     const services = await Service.find({});
-    console.log("Fetched services:", services); // Check data in the console
+    console.log("Fetched services:", services); 
     return NextResponse.json(services);
   } catch (error) {
     console.error("Error fetching services:", error);

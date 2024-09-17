@@ -2,10 +2,9 @@ import { NextResponse, NextRequest } from "next/server";
 import { connectDB } from "@/app/db/db.config";
 import Blog from "@/app/models/blog";
 
-// DELETE request to remove a blog by ID
+// remove a blog by ID
 import mongoose from "mongoose";
 
-// DELETE request to remove a blog by ID
 export async function DELETE(request: NextRequest, { params }: { params: { id: string } }) {
   await connectDB();
   
