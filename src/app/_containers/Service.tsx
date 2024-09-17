@@ -6,12 +6,7 @@ const Service = () => {
       style={{ borderRadius: "38px" }}
       className="relative bg-[#1d0532] py-16 flex flex-col justify-center items-center"
     >
-      {/* Light Flares */}
-      {/* Uncomment if you want to use the light flare effects */}
-      {/* <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent blur-2xl opacity-50" />
-        <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-b from-transparent via-white/10 to-transparent blur-2xl opacity-50" />
-      </div> */}
+      
 
       {/* Content */}
       <div className="container mx-auto px-4">

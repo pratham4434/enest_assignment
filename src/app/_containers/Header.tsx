@@ -22,7 +22,7 @@ function Header() {
           ></div>
 
           <div className="relative z-10 ml-6">
-            <h1 className="text-4xl font-bold mb-2">Hello Sindhu!</h1>
+            <h1 className="text-4xl font-bold mb-2">Hello Pratham!</h1>
             <h2 className="text-xl font-medium mb-4">
               Start your <strong>study abroad</strong> dream journey from here
             </h2>

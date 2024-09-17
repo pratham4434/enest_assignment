@@ -6,6 +6,8 @@ const universitySchema = new Schema({
   ranking: { type: Number },
   students: { type: Number },
   established: { type: Number },
+  imageUrl: { type: String },
+
 });
 
 const University = models.University || model("University", universitySchema);
