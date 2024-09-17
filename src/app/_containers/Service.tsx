@@ -46,57 +46,56 @@ const Service = () => {
     >
       {/* Content */}
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-white text-center mb-6">
+        <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-6">
           Service Plan
         </h2>
-        <p className="text-sm text-white text-center mb-12">
+        <p className="text-sm md:text-base text-white text-center mb-12">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quam
-          ipsam praesentium <br />
-          ab libero cumque aut voluptates, quaerat.
+          ipsam praesentium
+          <br className="hidden sm:inline-block" /> ab libero cumque aut
+          voluptates, quaerat.
         </p>
-        <div className="flex gap-6 justify-center items-center">
+
+        {/* Service Cards Section */}
+        <div className="flex flex-wrap gap-6 justify-center items-center">
           {services.map((service) => (
             <div
               key={service._id}
-              className="glassmorphic-card p-10 shadow-lg min-w-[200px] max-w-[280px] min-h-[450px] flex flex-col "
+              className="glassmorphic-card p-6 sm:p-8 lg:p-10 shadow-lg min-w-[200px] max-w-[280px] flex-grow flex flex-col rounded-lg bg-opacity-50"
             >
-              <h3 className="text-2xl font-medium  text-white mb-4">
+              <h3 className="text-2xl md:text-2xl font-medium text-white mb-4">
                 {service.name}
               </h3>
-              <br />
               <h3 className="text-3xl font-semibold text-white mb-4">
                 <div className="text-white mb-4">₹{service.fee}</div>
               </h3>
 
-              <div className="text-white text-sm mb-4 flex gap-3">
+              <div className="text-white text-sm flex gap-2 items-center mb-4">
                 <SiTicktick className="text-gray-600 text-lg" />
                 {service.feature1}
               </div>
-              <div className="text-white text-sm mb-4 flex gap-3">
+              <div className="text-white text-sm flex gap-2 items-center mb-4">
                 <SiTicktick className="text-gray-600 text-lg" />
                 {service.feature2}
               </div>
-              <div className="text-white text-sm mb-4 flex gap-3">
+              <div className="text-white text-sm flex gap-2 items-center mb-4">
                 <SiTicktick className="text-gray-600 text-lg" />
                 {service.feature3}
               </div>
-              <div className="text-white text-sm mb-4 flex gap-3">
+              <div className="text-white text-sm flex gap-2 items-center mb-4">
                 <SiTicktick className="text-gray-600 text-lg" />
                 {service.feature4}
               </div>
-              <div className="text-white text-sm mb-4 flex gap-3">
+              <div className="text-white text-sm flex gap-2 items-center mb-4">
                 <SiTicktick className="text-gray-600 text-lg" />
                 {service.feature5}
               </div>
-              <div className="text-white text-sm mb-4 flex gap-3">
+              <div className="text-white text-sm flex gap-2 items-center mb-4">
                 <SiTicktick className="text-gray-600 text-lg" />
                 {service.feature6}
               </div>
 
-              <br />
-              <br />
-              <br />
-              <button className="bg-violet-950 text-white px-4 py-2 rounded-lg hover:bg-violet-600">
+              <button className="mt-auto bg-violet-950 text-white px-4 py-2 rounded-lg hover:bg-violet-600">
                 Book Consultation
               </button>
             </div>
@@ -104,7 +103,8 @@ const Service = () => {
         </div>
       </div>
 
-      <button className="mt-12 px-7 py-6 text-lg font-bold text-white bg-violet-950 rounded-lg outline-4 outline-black hover:text-gray-200 ">
+      {/* Explore Button */}
+      <button className="mt-12 px-7 py-6 text-lg font-bold text-white bg-violet-950 rounded-lg hover:text-gray-200 hover:bg-violet-700">
         Explore all Colleges and Universities
       </button>
     </div>

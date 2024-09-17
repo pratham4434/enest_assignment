@@ -3,7 +3,7 @@ import { IoSearch } from "react-icons/io5";
 function Header() {
   return (
     <>
-      <div className="flex flex-col  mx-auto">
+      <div className="flex flex-col mt-20 mx-auto">
         <div 
           className="relative flex flex-col justify-center mt-10 py-14 px-8 bg-gray-900 text-white rounded-lg overflow-hidden"
           style={{

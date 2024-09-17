@@ -17,10 +17,13 @@ import { TbBrain } from "react-icons/tb";
 import { MdGroup } from "react-icons/md";
 import Image from "next/image";
 import logo from "../../app/assets/enest.png";
+import { useState } from "react";
 
 export default function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
-    <nav className="bg-white shadow-md py-4">
+    <nav className="bg-white shadow-md py-4 fixed w-full top-0 z-50">
       <div className="container mx-auto flex justify-between items-center px-4 lg:px-8">
         {/* Logo Section */}
         <div className="flex items-center space-x-4">
@@ -30,8 +33,33 @@ export default function Navbar() {
           </span>
         </div>
 
+        {/* Hamburger Menu for Mobile */}
+        <button
+          className="block lg:hidden text-gray-600 focus:outline-none"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+
         {/* Menubar Section */}
-        <ul className="flex space-x-12 text-md font-medium text-gray-500">
+        <ul
+          className={`${
+            isMenuOpen ? "block" : "hidden"
+          } lg:flex justify-center items-center space-x-12 text-md font-medium text-gray-500 lg:space-x-8 absolute lg:relative top-16 left-0 lg:top-0 w-full lg:w-auto bg-white lg:bg-transparent py-4 lg:py-0 px-6 lg:px-0 transition-all duration-300 ease-in-out z-40`}
+        >
           <li className="cursor-pointer hover:text-blue-600">
             <div className="flex justify-center items-center gap-2">
               <MdOutlineSchool className="text-gray-600 text-lg" />
@@ -69,7 +97,6 @@ export default function Navbar() {
           <Menubar className="rounded-full p-1 bg-gray-200">
             <MenubarMenu>
               <MenubarTrigger>
-                
               </MenubarTrigger>
               <MenubarContent className="rounded-lg p-2 bg-white shadow-md">
                 <MenubarItem>
