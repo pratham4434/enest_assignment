@@ -10,7 +10,7 @@ export async function connectDB() {
        console.log(`MongoDB Connected Successfully to ${databaseName}`);
     });
 
-    connection.on("error", (err) => {
+    connection.on("error", () => {
       process.exit(1);
     });
   } catch (error) {

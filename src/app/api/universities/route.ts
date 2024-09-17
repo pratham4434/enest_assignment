@@ -10,13 +10,14 @@ export async function GET(request: NextRequest) {
   const country = url.searchParams.get("country");
 
   try {
-    const query: { [key: string]: any } = {};
+    // Define query type explicitly
+    const query: { country?: string } = {};
 
     if (country) {
       query.country = country;
     }
 
-    // only 8 universities print karo
+    // Fetch only 8 universities and sort them by ranking
     const universities = await University.find(query)
       .sort({ ranking: 1 })
       .limit(8);
