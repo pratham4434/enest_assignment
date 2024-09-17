@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./_components/Navbar";
+import Footer from "./_components/Footer";
 
 export const metadata: Metadata = {
   title: "E-NEST",
@@ -20,6 +21,7 @@ export default function RootLayout({
         <div className="container mx-auto my-4 px-4 lg:px-8">
           {children}
         </div>
+        <Footer/>
       </body>
     </html>
   );
