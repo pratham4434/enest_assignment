@@ -1,4 +1,3 @@
-// src/app/models/universityModel.ts
 import mongoose, { Schema, model, models } from "mongoose";
 
 const universitySchema = new Schema({

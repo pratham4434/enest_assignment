@@ -1,4 +1,3 @@
-// src/app/api/universities/route.ts
 import { NextResponse } from "next/server";
 import { connectDB } from "@/app/db/db.config";
 import University from "@/app/models/universityModel";
