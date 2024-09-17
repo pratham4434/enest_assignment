@@ -1,13 +1,18 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { SiTicktick } from "react-icons/si";
 
 type Service = {
   _id: string;
   name: string;
+  fee: number;
   feature1: string;
   feature2: string;
   feature3: string;
+  feature4: string;
+  feature5: string;
+  feature6: string;
 };
 
 const Service = () => {
@@ -53,14 +58,44 @@ const Service = () => {
           {services.map((service) => (
             <div
               key={service._id}
-              className="glassmorphic-card p-8 shadow-lg min-w-[200px] max-w-[300px] min-h-[450px] flex flex-col items-center"
+              className="glassmorphic-card p-10 shadow-lg min-w-[200px] max-w-[280px] min-h-[450px] flex flex-col "
             >
-              <h3 className="text-2xl font-semibold text-white mb-4">
+              <h3 className="text-2xl font-medium  text-white mb-4">
                 {service.name}
               </h3>
-              <div className="text-white mb-4">{service.feature1}</div>
-              <div className="text-white mb-4">{service.feature2}</div>
-              <div className="text-white mb-4">{service.feature3}</div>
+              <br />
+              <h3 className="text-3xl font-semibold text-white mb-4">
+                <div className="text-white mb-4">₹{service.fee}</div>
+              </h3>
+
+              <div className="text-white text-sm mb-4 flex gap-3">
+                <SiTicktick className="text-gray-600 text-lg" />
+                {service.feature1}
+              </div>
+              <div className="text-white text-sm mb-4 flex gap-3">
+                <SiTicktick className="text-gray-600 text-lg" />
+                {service.feature2}
+              </div>
+              <div className="text-white text-sm mb-4 flex gap-3">
+                <SiTicktick className="text-gray-600 text-lg" />
+                {service.feature3}
+              </div>
+              <div className="text-white text-sm mb-4 flex gap-3">
+                <SiTicktick className="text-gray-600 text-lg" />
+                {service.feature4}
+              </div>
+              <div className="text-white text-sm mb-4 flex gap-3">
+                <SiTicktick className="text-gray-600 text-lg" />
+                {service.feature5}
+              </div>
+              <div className="text-white text-sm mb-4 flex gap-3">
+                <SiTicktick className="text-gray-600 text-lg" />
+                {service.feature6}
+              </div>
+
+              <br />
+              <br />
+              <br />
               <button className="bg-violet-950 text-white px-4 py-2 rounded-lg hover:bg-violet-600">
                 Book Consultation
               </button>
