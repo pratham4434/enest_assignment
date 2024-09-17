@@ -1,13 +1,17 @@
-import { NextResponse } from 'next/server';
-import { connectDB } from '@/app/db/db.config';
-import Service from '@/app/models/service';
+import { connectDB } from "@/app/db/db.config";
+import Service from "@/app/models/service";
 
-export async function GET() {
-  await connectDB(); 
+import { NextResponse, NextRequest } from "next/server";
+
+// Force dynamic rendering for API routes
+export const dynamic = "force-dynamic";
+
+export async function GET(request: NextRequest) {
+  await connectDB();
 
   try {
     const services = await Service.find({});
-    console.log("Fetched services:", services); 
+
     return NextResponse.json(services);
   } catch (error) {
     console.error("Error fetching services:", error);
