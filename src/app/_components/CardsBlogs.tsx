@@ -44,7 +44,7 @@ function CardsBlogs() {
       {blogs.map((blog) => (
         <div
           key={blog._id}
-          className="bg-white shadow-lg rounded-lg overflow-hidden"
+          className="bg-white shadow-lg rounded-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-2xl"
         >
           <img
             src={blog.imageUrl || "https://via.placeholder.com/400x200"} // Default image if no imageUrl

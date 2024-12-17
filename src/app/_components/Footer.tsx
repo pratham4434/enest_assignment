@@ -14,9 +14,9 @@ const Footer = () => {
           <div className="flex flex-col space-y-4 justify-center items-center">
           <Image src={logo} alt="Logo" width={60} height={60} />
             <span className="text-4xl font-sans font-semibold text-violet-600">
-              E-NEST
+              Study-net
             </span>
-            <h2 className="text-md font-medium text-center">Empowering Agri and Food Technology</h2>
+            <h2 className="text-md font-medium text-center">Empowering Technology</h2>
           </div>
 
           <div className="flex flex-col space-y-4">
@@ -81,7 +81,7 @@ const Footer = () => {
         {/* Bottom Section (optional) */}
         <div className="mt-12 border-t border-gray-700 pt-6 text-center">
           <p className="text-sm">
-            &copy; 2024 AgriVision4U Pvt. Ltd. 2024.
+            &copy; 2024 SomeCompany Pvt. Ltd. 2024.
           </p>
         </div>
       </div>

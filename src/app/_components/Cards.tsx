@@ -32,35 +32,47 @@ function Cards() {
     fetchUniversities();
   }, []);
 
-  if (loading)
-    return <h3 className="text-xl text-center font-bold mb-10">Loading...</h3>;
-  if (error) return <p>{error}</p>;
-  console.log(universities);
+  // Shimmer/Skeleton Loader Component
+  const ShimmerCard = () => (
+    <div className="bg-gray-200 animate-pulse rounded-lg overflow-hidden shadow-lg">
+      <div className="w-full h-48 bg-gray-300"></div>
+      <div className="p-4">
+        <div className="h-4 bg-gray-300 rounded w-3/4 mb-2"></div>
+        <div className="h-6 bg-gray-300 rounded w-1/2 mb-2"></div>
+        <div className="h-4 bg-gray-300 rounded w-1/4"></div>
+      </div>
+    </div>
+  );
+
+  if (error) return <p className="text-red-600">{error}</p>;
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 p-6">
-      {universities.map((university) => (
-        <div
-          key={university._id}
-          className="bg-white shadow-lg rounded-lg overflow-hidden"
-        >
-          <img
-            src={
-              university.imageUrl ||
-              "https://wallpapercave.com/wp/wp10055696.jpg"
-            }
-            alt={university.name}
-            className="w-full h-48 object-cover"
-          />
-          <div className="p-4">
-            <p className="text-sm text-gray-600 mb-1">
-              Ranked #{university.ranking}
-            </p>
-            <h3 className="text-xl font-bold mb-2">{university.name}</h3>
-            <p className="text-sm text-gray-600">{university.location}</p>
-          </div>
-        </div>
-      ))}
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 p-6 hover:">
+      {/* Shimmer Effect while loading */}
+      {loading
+        ? Array.from({ length: 8 }).map((_, index) => <ShimmerCard key={index} />)
+        : universities.map((university) => (
+            <div
+              key={university._id}
+              className="bg-white shadow-lg rounded-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-2xl"
+            >
+              <img
+                src={
+                  university.imageUrl ||
+                  "https://wallpapercave.com/wp/wp10055696.jpg"
+                }
+                alt={university.name}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <p className="text-sm text-gray-600 mb-1">
+                  Ranked #{university.ranking}
+                </p>
+                <h3 className="text-xl font-bold mb-2">{university.name}</h3>
+                <p className="text-sm text-gray-600">{university.location}</p>
+              </div>
+            </div>
+          ))}
     </div>
   );
 }

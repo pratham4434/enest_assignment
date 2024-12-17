@@ -27,8 +27,8 @@ export default function Navbar() {
         {/* Logo Section */}
         <div className="flex items-center space-x-4">
           <Image src={logo} alt="Logo" width={40} height={40} />
-          <span className="text-2xl font-sans font-semibold text-violet-600">
-            E-NEST
+          <span className="text-2xl font-sans font-semibold text-violet-800">
+            Study-net
           </span>
         </div>
 

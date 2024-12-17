@@ -5,7 +5,7 @@ function CardsScholarship() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
       {/* Card */}
-      <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+      <div className="bg-white shadow-lg rounded-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-2xl">
         <img
           src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="Card Image"
@@ -27,7 +27,7 @@ function CardsScholarship() {
 
       {/* //////////////////////////////////////////////////////////////// */}
 
-      <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+      <div className="bg-white shadow-lg rounded-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-2xl">
         <img
           src="https://5.imimg.com/data5/NQ/VI/WY/SELLER-7262992/convocation-gown-1000x1000.jpg"
           alt="Card Image"
@@ -47,7 +47,7 @@ function CardsScholarship() {
         </div>
       </div>
 
-      <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+      <div className="bg-white shadow-lg rounded-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-2xl">
         <img
           src="https://images.unsplash.com/photo-1539413595691-37a09a48579b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="Card Image"
